@@ -1,0 +1,115 @@
+@font-face{
+    font-family: "Montserrat";
+    src: url("https://fonts.googleapis.com/css?family=Cardo|Montserrat");
+}
+
+.title-border {
+    margin-bottom: 10px;
+}
+
+.container-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-logo-container {
+    background-color: lightblue;
+    margin-bottom: 50px; 
+}
+
+.fx-grayscale-logo {
+    width: 350px;
+    height: 350px;
+}
+
+/* .content {
+    width: 350px;
+} */
+
+.icon {
+    font-size: 24px;
+    color: black;
+    margin-right: 15px;
+    line-height: 31px;
+}
+
+.col {
+    padding: 0;
+}
+
+.invalid-feedback {
+    /* font-weight: bold; */
+    color: red;
+    position: absolute;
+    margin-left: 5px;
+}
+
+/* .btn-link {
+    padding: 10px;
+} */
+
+.login-button, .button {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Aleo', serif;
+    text-decoration: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    background: none;
+    border-radius: 50px;
+    outline : 0;
+    border-color: lightgrey;
+    border-width: 1.2px;
+}
+
+.button:hover {
+    background-color: lightblue;
+}
+
+.button:active {
+  background-color: lightcyan;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+.text-container {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Aleo', serif;
+}
+
+.form-group, .title-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Aleo', serif;
+}
+
+.wrong-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Aleo', serif;
+    color: red;
+}
+
+.btn {
+    background-color:transparent !important;
+    text-transform: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: none;
+    padding: 0cm;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    box-shadow: none;
+}

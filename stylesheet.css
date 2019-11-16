@@ -1,0 +1,23 @@
+@font-face{
+    font-family: "Montserrat";
+    src: url("https://fonts.googleapis.com/css?family=Cardo|Montserrat");
+}
+
+h1{
+    font-family: "Montserrat";
+}
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+td:empty {
+    padding: 20px;
+}
+
+table {
+    
+    border-collapse: collapse;
+    empty-cells: show;
+}
