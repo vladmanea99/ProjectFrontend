@@ -92,3 +92,31 @@ body{
 footer ul{
     display: inline;
 }
+
+footer{
+    padding-bottom: 70px;
+}
+
+
+#S31{
+ 
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+    border-bottom:1px solid black;
+}
+
+.two-tables{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 900px){
+    body{
+        font-size: 50%;
+    }
+    th,td{
+        font-size: 10px;
+    }
+ 
+}
