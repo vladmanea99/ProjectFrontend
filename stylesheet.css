@@ -3,9 +3,12 @@
     src: url("https://fonts.googleapis.com/css?family=Cardo|Montserrat");
 }
 
-h1{
+h1, h2, h3, p, footer *, #nav, .container-of-logo{
     font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
 }
+
 th,
 td {
     border: 1px solid black;
@@ -19,5 +22,73 @@ td:empty {
 table {
     
     border-collapse: collapse;
+    text-align: center;
     empty-cells: show;
+}
+
+#S2 table{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+div.header_nav{
+    background-color: lightblue;
+}
+
+.button{
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Aleo', serif;
+    text-decoration: none;
+    padding: 7px 15px;
+    cursor: pointer;
+    background: none;
+    border-radius: 50px;
+    outline : 0;
+    border-color: lightgrey;
+    border-width: 1.2px;
+}
+
+.divForButton{
+   display: flex;
+   justify-content: center;
+
+}
+
+
+.header_nav .button:hover {
+    background-color: #EEEEEE;
+}
+
+.button:hover{
+    background-color: lightblue;
+}
+
+.fx-grayscale-logo{
+
+    width: 300px;
+    height: 250px;
+
+
+}
+
+#nav li{
+    display: inline;
+
+}
+
+.restOfBody{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #EEEEEE;
+}
+
+body{
+    background-image: url('https://www.tokkoro.com/picsup/3002667-collaborate_collaboration_company_creative_design_designer_group_hands_help_marketing_people_presentation_woman39s-hands_work_working.jpg');
+}
+
+footer ul{
+    display: inline;
 }
