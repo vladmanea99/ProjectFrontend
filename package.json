@@ -1,0 +1,26 @@
+{
+  "name": "projectfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladmanea99/ProjectFrontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladmanea99/ProjectFrontend/issues"
+  },
+  "homepage": "https://github.com/vladmanea99/ProjectFrontend#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "formidable": "^1.2.1",
+    "nodemailer": "^6.4.2"
+  }
+}

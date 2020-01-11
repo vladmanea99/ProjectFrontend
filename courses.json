@@ -1,0 +1,29 @@
+{
+	"Course" : [
+		{
+		"id" : 1,
+		"CourseName" : "Java",
+		"Description" : "None",
+		"ImageUrl" : "NoImage",
+		"Category" : "Hardskills",
+		"nOfHours" : 6,
+		"BeginDate" : "23/11/2020",
+		 "Notation" : "Examen",
+		"HourTypes" : "Course",
+		"Presence" : true
+		},
+{
+		"id" : 2,
+		"CourseName" : "English",
+		"Description" : "None",
+		"ImageUrl" : "NoImage",
+		"Category" : "Softskills",
+		"nOfHours" : 6,
+		"BeginDate" : "25/10/2020",
+		 "Notation" : "Examen",
+		"HourTypes" : "Course",
+		"Presence" : true
+		}
+
+	]
+}
