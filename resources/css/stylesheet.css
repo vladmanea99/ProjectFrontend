@@ -31,6 +31,13 @@ table {
     margin-left: auto;
 }
 
+article{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10px;
+    border: 2px solid black;
+    
+}
 
 div.header_nav{
     background-color: lightblue;
@@ -105,12 +112,12 @@ footer{
     margin-bottom: 3%;
     border-bottom:1px solid black;
 }
-
+/*
 .two-tables{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
-
+*/
 @media screen and (max-width: 900px){
     body{
         font-size: 50%;

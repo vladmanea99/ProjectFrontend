@@ -24,26 +24,25 @@
                     <div class="title title-border">
                         <h4>Log in to your account</h4>
                     </div>
+                    <form id = "form_login" method = "POST"> 
                         <div class="form-group flex">    
                             <div class="col" id = "S1">
                                 <input type="text" placeholder="E-mail" autocomplete="email"
-                                    id="email" />   
+                                    id="email" name = "email" required/>   
                             </div>
                         </div>
     
                         <div class="form-group flex">
                             <div class="col">
                                 <input type="password" placeholder="Password" 
-                                    autocomplete="current-password" id="password" />
+                                    autocomplete="current-password" id="password" name = "password" required/>
                             </div>
                         </div>
     
                         <div class="login-button">
-                            <button type="submit" class="button"><span>Login</span></button>
+                             <input type="submit" value = "Login" class="button">
                         </div>
-                        <div>
-                            <a href = "/mainPage">Visit the home page</a>
-                        </div>
+                    </form>
                 </div>
             </div>
         </div>

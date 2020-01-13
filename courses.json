@@ -9,7 +9,7 @@
 		"nOfHours" : 6,
 		"BeginDate" : "23/11/2020",
 		 "Notation" : "Examen",
-		"HourTypes" : "Course",
+		"HourType" : "Course",
 		"Presence" : true
 		},
 {
@@ -21,7 +21,7 @@
 		"nOfHours" : 6,
 		"BeginDate" : "25/10/2020",
 		 "Notation" : "Examen",
-		"HourTypes" : "Course",
+		"HourType" : "Course",
 		"Presence" : true
 		}
 

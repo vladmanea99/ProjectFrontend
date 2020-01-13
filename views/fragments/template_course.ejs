@@ -1,9 +1,16 @@
+<link rel="stylesheet" type="text/css" href="../../resources/css/stylesheetTemplateCourse.css">
 <div class="template_user">
 	<section class="course">
-		<h2>Course: <%= course.CourseName %></h2>
-		
-		<p id="id_course">Id: <%= course.id %></p>		
-		<p id="description">Id: <%= course.Description %></p>
-		
+		<article>
+			<h2>Course: <%= course.CourseName %></h2>
+			<p id="id_course">Id: artc-<%= course.id %></p>
+			<p id="description">Description: <%= course.Description %></p>
+			<p id="nOfHours">Number of Hours: <%= course.nOfHours %></p>
+			<p id="notation">Notation: <%= course.Notation %></p>
+			<p id="hoursType">Type of Hours: <%= course.HourType %></p>
+			<p id="beginDate">Beginning Date: <%= course.BeginDate %></p>
+			<p id="presence">Presence: <%= course.Presence %></p>
+		</article>
+
 	</section>
 </div>
