@@ -10,7 +10,7 @@
 		"BeginDate" : "23/11/2020",
 		 "Notation" : "Examen",
 		"HourType" : "Course",
-		"Presence" : true
+		"Presence" : false
 		},
 {
 		"id" : 2,

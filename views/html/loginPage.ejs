@@ -24,7 +24,7 @@
                     <div class="title title-border">
                         <h4>Log in to your account</h4>
                     </div>
-                    <form id = "form_login" method = "POST"> 
+                    <form id = "form_login" method = "POST" action="/loginPage"> 
                         <div class="form-group flex">    
                             <div class="col" id = "S1">
                                 <input type="text" placeholder="E-mail" autocomplete="email"
@@ -43,6 +43,10 @@
                              <input type="submit" value = "Login" class="button">
                         </div>
                     </form>
+                    <div>
+                    <p>Don't have an account?.</p>
+                    <button class = "button"><a href = '/registerPage' style = "text-decoration: none; color:black">Register</a></button>
+                </div>
                 </div>
             </div>
         </div>

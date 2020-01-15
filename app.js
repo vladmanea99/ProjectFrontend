@@ -34,41 +34,58 @@ function saveJson(obJson, numeFis){
 app.get('/mainPage', function(req, res){
 	let rawdata = fs.readFileSync('courses.json');
 	let jsfis = JSON.parse(rawdata);
+	//jsfis = getJson("courses.json");
 	console.log(jsfis.courses);
-	if(!singleton || req.session.user == null){
+	if(!req.session.user){
 		res.render('html/loginPage');
 	}
+	else{
 	res.render('html/mainPage',{courses:jsfis.Course});
+	}
 });
 
 app.get('/registerPage', function(req, res){
+	if (req.session.user){
+		res.render('html/userPage');
+	}
 	res.render('html/registerPage');
 })
 
 
 app.get('/loginPage', function(req, res){
-	res.render('html/loginPage');
-})
-
-app.get('/userPage', function(req, res){
-	if (req.session.user.id == 1){
-		var coursesJson = getJson("courses.json");
-		res.render('html/adminPage', {courses:coursesJson.Course});
+	if (!req.session.user){
+		res.render('html/loginPage');
+		
 	}
 	else{
 		res.render('html/userPage');
+	}
+})
+
+app.get('/userPage', function(req, res){
+	if (!req.session.user){
+		res.redirect('/loginPage');
+	}
+	if (req.session.user.id == 1){
+		var coursesJson = getJson("courses.json");
+		var usersJson = getJson("users.json");
+		res.render('html/adminPage', {courses:coursesJson.Course, users:usersJson.Users});
+	}
+	else{
+		res.render('html/userPage', {user:req.session.user});
 	}
 	
 })
 
 app.get('/adminPage', function(req, res){
 	
-	if(!singleton || req.session.user == null){
+	if(!req.session.user){
 		res.redirect('/loginPage');
 	}
 	else if (req.session.user.id == 1){
 		var coursesJson = getJson("courses.json");
-		res.render('html/adminPage', {courses:coursesJson.Course});
+		var usersJson = getJson("users.json");
+		res.render('html/adminPage', {courses:coursesJson.Course, users:usersJson.Users});
 	}
 	else{
 		res.render('html/errorPage');
@@ -76,20 +93,18 @@ app.get('/adminPage', function(req, res){
 })
 
 app.get("/", function (req, res){
-	if (!singleton){
-		req.session.user = null;
-		singleton = true;
-	}
-	if (req.session.user == null){
+	
+	if (!req.session.user){
 		res.redirect("/loginPage");	
 	}
 	else{
 		if (req.session.user.id == 1){
 			var coursesJson = getJson("courses.json");
-			res.redirect("/adminPage", {courses:coursesJson.Course});
+			var usersJson = getJson("users.json");
+			res.render("html/adminPage", {courses:coursesJson.Course, users:usersJson.Users});
 		}
 		else{
-			res.redirect("/userPage", {user:req.session.user});
+			res.render("html/userPage", {user:req.session.user});
 		}
 		
 	}
@@ -110,23 +125,28 @@ app.post('/loginPage', function(req, res){
 			return (x.email == fields.email && x.password == fields.password);
 		})
 		console.log(user);
-		
-		if (user){
+		if (!user){
+			req.session.user = null;
+			res.redirect('/loginPage');
+		}
+		else if (user){
+			if (user.blocked){
+				req.session.user = null;
+				res.redirect('/loginPage');
+			}
+			else {
 			req.session.user = user;
 			if (user.id == 1){
 				var coursesJson = getJson("courses.json");
-				res.render('html/adminPage', {courses:coursesJson.Course});
+				var usersJson = getJson("users.json");
+				res.render('html/adminPage', {courses:coursesJson.Course, users:usersJson.Users});
 			}
 			else {
 				res.render('html/userPage', {user:user});
 			}
+		}
 			
 		}
-		else{
-			req.session.user = null;
-			res.redirect('/loginPage');
-		}
-		
 	})
 })
 
@@ -155,7 +175,8 @@ app.post('/registerPage', function(req, res){
 			email:fields.email, 
 			password:fields.password,  
 			currentCourses:[],
-			pastCourses:[]});
+			pastCourses:[],
+			blocked:false});
 		}
 			saveJson(usersJson, "users.json");	
 		

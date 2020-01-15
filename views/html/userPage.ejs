@@ -51,70 +51,22 @@
             <h2>Courses</h2>
             <div class="two-tables">
                 <div class="first-half">
-                    <table>
-                        <caption>Past Courses</caption>
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Java for Dummies</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/234px-Java_programming_language_logo.svg.png"
-                                        alt="Java picture" title="Java" style="width:40px;height: 60px;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Agile from Begginer to Expert</td>
-                                <td><img src="https://miro.medium.com/max/1100/1*vdSIa2rFEAZS1YUsgOZR0A.jpeg"
-                                        alt="Agile picture" title="Agile" style="width:80px;height: 60px;"></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Agile from Begginer to Expert</td>
-                                <td><img src="https://miro.medium.com/max/1100/1*vdSIa2rFEAZS1YUsgOZR0A.jpeg"
-                                        alt="Agile picture" title="Agile" style="width:80px;height: 60px;"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3>Current Courses</h3>
+                    <% for(i=0;i<user.currentCourses.length; i++){%>
+                        <%- include("../fragments/template_course.ejs",
+                        {
+                            course:user.currentCourses[i]
+                        })%>
+                        <%}%>
                 </div>
                 <div class="second-half">
-                    <table>
-                        <caption>Current Courses</caption>
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Java for Dummies</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/234px-Java_programming_language_logo.svg.png"
-                                        alt="Java picture" title="Java" style="width:40px;height: 60px;">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Agile from Begginer to Expert</td>
-                                <td><img src="https://miro.medium.com/max/1100/1*vdSIa2rFEAZS1YUsgOZR0A.jpeg"
-                                        alt="Agile picture" title="Agile" style="width:80px;height: 60px;"></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Agile from Begginer to Expert</td>
-                                <td><img src="https://miro.medium.com/max/1100/1*vdSIa2rFEAZS1YUsgOZR0A.jpeg"
-                                        alt="Agile picture" title="Agile" style="width:80px;height: 60px;"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <h3>Past Courses</h3>
+                    <% for(i=0;i<user.pastCourses.length; i++){%>
+                        <%- include("../fragments/template_course.ejs",
+                        {
+                            course:user.pastCourses[i]
+                        })%>
+                        <%}%>
                 </div>
             </div>
 

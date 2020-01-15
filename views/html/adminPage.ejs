@@ -45,15 +45,20 @@
             <h2>Users and Courses</h2>
             <div class="two-tables">
                 <div class="first-half">
-                    
-                </div>
-                <div class="second-half">
-                    <% for(i=0;i<courses.length; i++){%>
-                        <%- include("../fragments/template_course.ejs",
+                    <% for(i=0;i<users.length; i++){%>
+                        <%- include("../fragments/template_user.ejs",
                         {
-                            course:courses[i]
+                            user:users[i]
                         })%>
                         <%}%>
+                </div>
+                <div class="second-half">
+                        <% for(i=0;i<courses.length; i++){%>
+                                <%- include("../fragments/template_course.ejs",
+                                {
+                                    course:courses[i]
+                                })%>
+                                <%}%>
                 </div>
             </div>
             </section>
